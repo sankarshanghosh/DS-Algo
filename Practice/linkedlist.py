@@ -1,19 +1,35 @@
-from email import header
-
-
 class node:
     def __init__(self, value):
         self.value = value
         self.next = None
 
+
 class linkedList:
     def __init__(self):
-        self.head = node()
+        self.head = None
 
-    def append(self, data):
-        new_node = node(data)
-        cur = self.head
+    def appendLast(self, value):
+        new_node = node(value)
 
-        while cur.next != None:
-            cur = cur.next
-        cur.next = new_node
+        if self.head == None:
+            self.head = new_node
+            return
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+            current.next.next = None
+
+    def display(self):
+        current = self.head
+        while current:
+            print(current.value)
+            current = current.next
+
+
+akku = linkedList()
+akku.appendLast(5)
+akku.appendLast(6)
+akku.appendLast(7)
+akku.display()
