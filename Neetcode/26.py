@@ -6,4 +6,4 @@ for i in range(1, len(nums)):
         nums[index] = nums[i]
         index += 1
 
-print(nums)            
+print(nums)
