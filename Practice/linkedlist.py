@@ -1,8 +1,7 @@
 class node:
-    def __init__(self, value):
+    def __init__(self, value = None):
         self.value = value
         self.next = None
-
 
 class linkedList:
     def __init__(self):
@@ -27,9 +26,20 @@ class linkedList:
             print(current.value)
             current = current.next
 
+    def reverse(self):
+        curr = self.head
+        prev = node()
+        while curr:
+            temp = curr.next
+            curr.next = prev
+            curr = temp
+
+
+
 
 akku = linkedList()
 akku.appendLast(5)
 akku.appendLast(6)
 akku.appendLast(7)
+akku.reverse()
 akku.display()
